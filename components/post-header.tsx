@@ -3,15 +3,17 @@ import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import PostTitle from './post-title'
 import Author from '../types/author'
+import PostViews from './post-views'
 
 type Props = {
   title: string
   coverImage: string
   date: string
-  author: Author
+  author: Author;
+  views: number;
 }
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, coverImage, date, author, views }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -27,6 +29,10 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />
+        </div>
+        <div className="mb-6 text-lg">
+          <DateFormatter dateString={date} /> - {" "}
+          <PostViews>{`${views >= 0 ? views : "..."} views`}</PostViews>
         </div>
       </div>
     </>
