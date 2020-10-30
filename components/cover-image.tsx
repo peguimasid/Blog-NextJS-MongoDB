@@ -19,7 +19,7 @@ const CoverImage = ({ title, src, slug, highQuality, priority }: Props) => {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
       unsized
-      quality={highQuality ? 100 : 75}
+      quality={highQuality ? 90 : 50}
       priority={priority ? true : false}
     />
   )
